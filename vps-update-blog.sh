@@ -6,9 +6,9 @@ html_dir=$2
 cd $HOME
 mkdir -p ./tmp
 
-[ -d ./tmp/$repo ] || rm -fr $HOME/tmp/$repo
+[ -d ./tmp/$repo ] && rm -fr $HOME/tmp/$repo
 
-git clone /git/$repo.git ./tmp/$repo
+git clone /git/$repo.git $HOME/tmp/$repo
 
 jekyll build -s ./tmp/$repo -d /var/www/html/$html_dir
 
