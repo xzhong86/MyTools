@@ -8,7 +8,8 @@ if [ -z "$out" ] ; then
 fi
 
 base64 -i -d $input > output.aes
-openssl aes-128-cbc -d -nosalt -in output.aes -out $out -k $PASSWD
+#openssl aes-128-cbc -d -nosalt -in output.aes -out $out -k $PASSWD
+openssl aes-128-cbc -d -nosalt -in output.aes -out $out -iter 478 -k $PASSWD
 
 rm output.aes
 
